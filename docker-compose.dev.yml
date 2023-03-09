@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  standalone-authentication:
+    container_name: ${SERVICE_NAME}
+    build:
+      context: .
+      target: production
+      dockerfile: Dockerfile
+    image: ${IMAGE_NAME}
+    ports:
+      - "8090:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    networks:
+      - backend
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.site-secure.entrypoints=web"
+      - "traefik.http.routers.site-secure.rule=Host(`auth.local`)"
+      - "traefik.http.routers.site-secure.service=site"
+      - "traefik.http.services.site.loadbalancer.server.port=8090"
+
+networks:
+  backend:
+  proxy:
+    external: true

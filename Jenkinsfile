@@ -33,27 +33,27 @@ pipeline{
               }
               }
               }
-        stage('Upload Jar to nexus'){
-            steps{
+        //stage('Upload Jar to nexus'){
+           // steps{
                 
-                nexusArtifactUploader artifacts: [
+              //  nexusArtifactUploader artifacts: [
                     [
-                        artifactId: 'cabd-springboot-jwt',
-                        classifier: '',
-                        file: 'target/cabd-springboot-jwt-0.0.1-SNAPSHOT.jar',
-                        type: 'jar'
-                    ]
-                ],
-                credentialsId: 'nexus',
-                groupId: 'com.zepe-standaloneauth',
-                nexusUrl: '${NEXUS_URL}',
-                nexusVersion: 'nexus3',
-                protocol: 'http',
-                repository: 'zepe-standaloneauth',
-                version: '0.0.1-SNAPSHOT'
+                 //       artifactId: 'cabd-springboot-jwt',
+                  //      classifier: '',
+                  //      file: 'target/cabd-springboot-jwt-0.0.1-SNAPSHOT.jar',
+                 //       type: 'jar'
+                //    ]
+              //  ],
+                //credentialsId: 'nexus',
+                //groupId: 'com.zepe-standaloneauth',
+                //nexusUrl: '${NEXUS_URL}',
+                //nexusVersion: 'nexus3',
+                //protocol: 'http',
+              //  repository: 'zepe-standaloneauth',
+            //    version: '0.0.1-SNAPSHOT'
 
-            }
-        }
+          //  }
+        //}
            
                     stage('Build Image'){
                           steps{

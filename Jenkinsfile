@@ -37,7 +37,7 @@ pipeline{
            // steps{
                 
               //  nexusArtifactUploader artifacts: [
-                    [
+                 //   [
                  //       artifactId: 'cabd-springboot-jwt',
                   //      classifier: '',
                   //      file: 'target/cabd-springboot-jwt-0.0.1-SNAPSHOT.jar',

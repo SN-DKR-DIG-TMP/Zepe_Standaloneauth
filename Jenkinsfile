@@ -51,7 +51,7 @@ pipeline{
                 //protocol: 'http',
                 //repository: 'zepe-standaloneauth',
                 //version: '0.0.1-SNAPSHOT'
-                sh "echo Skip Nexus uploading beacause credentialsId not good."
+                sh "echo 'Skip Nexus uploading beacause credentialsId not good.'"
             }
         }
            

@@ -36,22 +36,22 @@ pipeline{
         stage('Upload Jar to nexus'){
             steps{
                 
-                nexusArtifactUploader artifacts: [
-                    [
-                        artifactId: 'cabd-springboot-jwt',
-                        classifier: '',
-                        file: 'target/cabd-springboot-jwt-0.0.1-SNAPSHOT.jar',
-                        type: 'jar'
-                    ]
-                ],
-                credentialsId: 'nexus',
-                groupId: 'com.zepe-standaloneauth',
-                nexusUrl: '${NEXUS_URL}',
-                nexusVersion: 'nexus3',
-                protocol: 'http',
-                repository: 'zepe-standaloneauth',
-                version: '0.0.1-SNAPSHOT'
-
+                //nexusArtifactUploader artifacts: [
+                //    [
+                //        artifactId: 'cabd-springboot-jwt',
+                //        classifier: '',
+                //        file: 'target/cabd-springboot-jwt-0.0.1-SNAPSHOT.jar',
+                //        type: 'jar'
+                //    ]
+                //],
+                //credentialsId: 'nexus',
+                //groupId: 'com.zepe-standaloneauth',
+                //nexusUrl: '${NEXUS_URL}',
+                //nexusVersion: 'nexus3',
+                //protocol: 'http',
+                //repository: 'zepe-standaloneauth',
+                //version: '0.0.1-SNAPSHOT'
+                sh "Skip Nexus uploading beacause credentialsId not good."
             }
         }
            
